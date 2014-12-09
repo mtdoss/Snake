@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif;
+}
+
+/*.snake {
+  display: inline-block;
+  background-color: red;
+}
+*/
+p.snake {
+  background-color: green;
+  display: inline-block;
+}
