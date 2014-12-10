@@ -26,11 +26,15 @@
     return bool;
   };
 
+  Snake.prototype.hitSelf = function() {
+    var snakeExceptHead = this.segments.slice(1);
+    return arrayIncludes(snakeExceptHead, this.segments[0]);
+  };
+
   Snake.prototype.move = function() {
     this.segments.unshift(this.add(this.dir));
     this.segments.pop();
-    var snakeExceptHead = this.segments.slice(1);
-    if (arrayIncludes(snakeExceptHead, this.segments[0])){
+    if (this.hitSelf()){
       alert("You lose!");
       restart();
     }
