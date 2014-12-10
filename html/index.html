@@ -14,7 +14,14 @@
     <script type="text/javascript" src="../js/snake-view.js"></script>
     <script>
       var $board = $(document.documentElement);
-      new SnakeGame.View($board);
+      var view = new SnakeGame.View($board);
+      var interval = view.start();
+
+      function restart() {
+        clearInterval(interval);
+        view = new SnakeGame.View($board);
+        interval = view.start();
+      };
     </script>
   </body>
 </html>
