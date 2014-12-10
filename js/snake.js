@@ -25,13 +25,17 @@
     }
     return bool;
   };
+
+  Snake.prototype.hitSelf = function(){
+    
+  };
   
   Snake.prototype.move = function() {
     this.segments.unshift(this.add(this.dir));
-    // if (included(this.segments[0], )
     this.segments.pop();
-    if (this.includes(this.segments[0])){
-      
+    var snakeExceptHead = this.segments.slice(1);
+    if (arrayIncludes(snakeExceptHead, this.segments[0])){
+      alert("You lose!");
     }
   };
   
@@ -52,3 +56,14 @@
   
   
 })();
+
+arrayIncludes = function(arr, pos) {
+  var len = arr.length;
+  var bool = false;
+  for (var i = 0; i < len; i++) {
+    if (arr[i][0] === pos[0] && arr[i][1] === pos[1]) {
+      bool = true;
+    }
+  }
+  return bool;
+};
