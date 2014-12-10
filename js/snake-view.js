@@ -7,8 +7,10 @@
     this.board = new SnakeGame.Board();
     this.$el = $el;
     this.handleKeyEvent();
-    setInterval(this.step.bind(this), 150);
-    // this.step();
+  };
+
+  View.prototype.start = function() {
+    return setInterval(this.step.bind(this), 130);
   };
   
   View.prototype.handleKeyEvent = function(){
