@@ -7,8 +7,8 @@
     this.board = new SnakeGame.Board();
     this.$el = $el;
     this.handleKeyEvent();
-    setInterval(this.step.bind(this), 150);    
-    // this.step();
+    // setInterval(this.step.bind(this), 150);
+    this.step();
   };
   
   View.prototype.handleKeyEvent = function(){
@@ -36,7 +36,7 @@
     } else{
       this.board.snake.move();
     }
-    this.$el.html("<pre>" + this.board.render() + "</pre>");
+    this.$el.html("<pre> <div class='board' style='width: 200px; height: 500px; max-height: 500px; border: 2px solid black;'>" + this.board.render() + "</pre></div>");
   };
   
 })();
