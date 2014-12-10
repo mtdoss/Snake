@@ -36,7 +36,7 @@
     } else{
       this.board.snake.move();
     }
-    this.$el.html("<pre> <div class='board' style='width: 200px; height: 500px; max-height: 500px; border: 2px solid black;'>" + this.board.render() + "</pre></div>");
+    this.$el.html("<pre> <div class='board' style='width: 200px; height: 200px; border: 2px solid black;'>" + this.board.render() + "</pre></div>");
   };
   
 })();

@@ -26,11 +26,11 @@
     this.grid.forEach(function(row, i){
       row.forEach(function(el, j){
         if(that.snake.includes([i,j])){
-          that.grid[i][j] = '<p class="snake" style="display: inline;background-color: green; color: green; width: 20px; height: 20px; margin: 10px;">S</p>';
+          that.grid[i][j] = '<p class="snake" style="display: inline-block;background-color: green; color: green; width: 20px; height: 20px; margin: 0;">S</p>';
         } else if(that.appleIncludes([i, j])){
-          that.grid[i][j] = '<p class="apple" style="display: inline;background-color: red; color: red; width: 20px; height: 20px; margin: 10px;">A</p>';
+          that.grid[i][j] = '<p class="apple" style="display: inline-block;background-color: red; color: red; width: 20px; height: 20px; margin: 0;">A</p>';
         } else {
-          that.grid[i][j] = '<p class="blank" style="display: inline; width: 20px; height: 20px; margin: 10px; ">.</p>';
+          that.grid[i][j] = '<p class="blank" style="display: inline-block; width: 20px; height: 20px; margin: 0;">.</p>';
         }
       });
     });
