@@ -31,10 +31,15 @@
     return arrayIncludes(snakeExceptHead, this.segments[0]);
   };
 
+  Snake.prototype.runOffBoard = function() {
+    return (this.segments[0][0] >= 10 || this.segments[0][0] < 0 ||
+      this.segments[0][1] >= 10 || this.segments[0][1] < 0);
+  };
+
   Snake.prototype.move = function() {
     this.segments.unshift(this.add(this.dir));
     this.segments.pop();
-    if (this.hitSelf()){
+    if (this.hitSelf() || this.runOffBoard()){
       alert("You lose!");
       restart();
     }
